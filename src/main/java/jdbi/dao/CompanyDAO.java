@@ -17,7 +17,7 @@ public interface CompanyDAO {
 	List<Company> findById(@Bind("id") String id);
 
 	@Mapper(CompanyMapper.class)
-	@SqlQuery("select * from mada.cb_objects where funding_rounds > :round")
+	@SqlQuery("select * from mada.cb_objects where funding_rounds >= :round")
 	List<Company> findFundRoundsLargerThan(@Bind("round") int round);
 
 	 /**
